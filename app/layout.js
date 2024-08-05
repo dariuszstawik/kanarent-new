@@ -3,6 +3,7 @@ import { Inter, Poppins, Lato } from "@next/font/google";
 import "./globals.css";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar-homepage";
+import { AppWrapper } from "./context";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,8 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <body>
-        {children}
-        <Footer />
+        <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   );

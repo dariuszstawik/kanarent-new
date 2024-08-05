@@ -1,3 +1,5 @@
+import SearchBar from "../search-bar";
+
 export default function HeroSection() {
   return (
     <div className="relative pt-28 w-screen h-screen font-lato" id="top">
@@ -58,15 +60,7 @@ export default function HeroSection() {
           <span className="block">budowlanego i ogrodnicznego</span>
           <span className="block opacity-70">&gt; Będzin i okolice</span>
         </h1>
-        <div className="relative w-[460px] h-20 rounded-full mt-10">
-          <input
-            className="w-full h-full rounded-full text-forestgreen-300 text-xl p-8 placeholder-color-forestgreen-300 placeholder-forestgreen-300"
-            placeholder="Wyszukaj sprzęt"
-          ></input>
-          <span className="absolute right-[5px] top-[50%] -translate-y-[50%] w-[66px] h-[66px] bg-forestgreen-300 rounded-full flex justify-center items-center">
-            <img src="/search-icon.svg" alt="search" />
-          </span>
-        </div>
+        <SearchBar></SearchBar>
       </div>
     </div>
   );
