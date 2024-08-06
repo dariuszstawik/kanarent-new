@@ -6,6 +6,7 @@ import PageHeader from "../../components/page-header";
 import ProductCard from "../../components/product-card";
 import SectionTitle from "../../components/section-title";
 import Navbar from "@/app/components/navbar";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   const res = await client.getEntries({ content_type: "category" });
@@ -59,8 +60,9 @@ export default async function Maszyny({ params }) {
           <SectionTitle isAlignedLeft>
             {category.fields.categoryName}
           </SectionTitle>
+
           <Button className="mt-auto min-w-[250px]">
-            Zobacz pozostałe kategorie
+            <Link href="/#sprzet">Zobacz pozostałe kategorie</Link>
           </Button>
         </div>
         <ul className="w-full grid grid-cols-1 lg:grid-cols:2 xl:grid-cols-3 gap-[40px] mx-auto my-16">
