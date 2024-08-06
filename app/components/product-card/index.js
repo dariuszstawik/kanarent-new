@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 import Button from "../button";
 import Link from "next/link";
 
-export default function ProductCard({ title, img, href }) {
+export default function ProductCard({ title, price, img, href }) {
   return (
     <Fade direction="bottom" delay={300} triggerOnce>
       <div className="flex flex-col max-w-screen h-[680px] sm:w-96 rounded shadow-sm">
@@ -29,13 +29,15 @@ export default function ProductCard({ title, img, href }) {
             {lead.length > 200 ? lead.slice(0, 200) + "..." : lead}
           </p> */}
 
-          <div className="relative w-1/2 h-[72px] flex justify-center items-center bg-transparent border-[2px] border-forestgreen-300 text-forestgreen-300 ml-[10px]">
-            <span className="text-[16px] font-semibold">60,00 zł / doba</span>
-            <div className="h-[95px] w-[95px] absolute !m-[0] top-[-9px] left-[-9px] z-[1]">
-              <div className="absolute -top-[2px] left-[0px] bg-forestgreen-300 w-[50px] h-[2px]" />
-              <div className="absolute -top-[2px] left-[0px] bg-forestgreen-300 w-[50px] h-[2px] [transform:_rotate(90deg)] [transform-origin:0_0] z-[1]" />
+          {price && (
+            <div className="relative w-1/2 h-[72px] flex justify-center items-center bg-transparent border-[2px] border-forestgreen-300 text-forestgreen-300 ml-[10px]">
+              <span className="text-[16px] font-semibold">{price}</span>
+              <div className="h-[95px] w-[95px] absolute !m-[0] top-[-9px] left-[-9px] z-[1]">
+                <div className="absolute -top-[2px] left-[0px] bg-forestgreen-300 w-[50px] h-[2px]" />
+                <div className="absolute -top-[2px] left-[0px] bg-forestgreen-300 w-[50px] h-[2px] [transform:_rotate(90deg)] [transform-origin:0_0] z-[1]" />
+              </div>
             </div>
-          </div>
+          )}
           <Button className="mr-auto  font-semibold text-[16px]">
             <Link href={`../${href}`}>czytaj więcej</Link>
           </Button>

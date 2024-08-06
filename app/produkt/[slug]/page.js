@@ -3,6 +3,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import PageHeader from "@/app/components/page-header";
 import ProductTemplate from "@/app/components/product-template";
 import Navbar from "@/app/components/navbar";
+import HowToRentSection from "@/app/components/how-to-rent-section";
+import ContactSection from "@/app/components/contact-section";
 
 export async function generateStaticParams() {
   const res = await client.getEntries({
@@ -37,8 +39,10 @@ export default async function Produkt({ params }) {
         title={product.fields.title}
         body={documentToReactComponents(product.fields.body)}
         img={product.fields.image || ""}
-        // price={product.fields.price}
+        price={product.fields.price}
       />
+      {/* <HowToRentSection />
+      <ContactSection /> */}
     </>
   );
 }

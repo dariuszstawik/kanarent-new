@@ -72,6 +72,7 @@ export default async function Maszyny({ params }) {
                   key={product.sys.id}
                   title={product.fields.title}
                   img={product.fields.image || ""}
+                  price={product.fields.price || ""}
                   href={`/produkt/${product.fields.slug}`}
                 />
               )
