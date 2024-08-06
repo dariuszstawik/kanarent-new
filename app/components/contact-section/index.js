@@ -97,7 +97,9 @@ export default function ContactSection() {
             id="contactSection"
           >
             {/* <SectionTitle>Wyślij wiadomość</SectionTitle> */}
-            <h2 className="w-3/4 mx-auto text-white">Wyślij wiadomość</h2>
+            <h2 className="w-3/4 text-[36px] mx-auto text-white">
+              Wyślij wiadomość
+            </h2>
             <form
               // ref={form}
               // onSubmit={sendEmail}
