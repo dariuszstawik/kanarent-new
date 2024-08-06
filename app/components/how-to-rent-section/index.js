@@ -5,7 +5,7 @@ export default function HowToRentSection() {
   return (
     <div
       className={`self-stretch bg-whitesmoke-100 flex flex-col items-center justify-start pt-[100px] pb-28 pr-[21px] pl-5 box-border relative gap-[60px] max-w-full mq450:pt-[42px] mq450:pb-[42px] mq450:box-border mq850:gap-[30px] mq850:pt-[65px] mq850:pb-[65px] mq850:box-border`}
-      id="jak-wynajac"
+      id="jak-wypozyczyc"
     >
       {/* <div className="w-[1600px] h-[822px] relative bg-whitesmoke-100 hidden max-w-full z-[0]" /> */}
       <SectionTitle>Jak wypożyczyć sprzęt?</SectionTitle>

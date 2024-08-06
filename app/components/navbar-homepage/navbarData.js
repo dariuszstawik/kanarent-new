@@ -8,21 +8,21 @@ const navbarData = [
 
   {
     id: 2,
-    title: "Sprzęt",
+    title: "Sprzęt wg kategorii",
     path: "/#sprzet",
     button: false,
   },
 
   {
     id: 3,
-    title: "Jak wynająć",
-    path: "/#jak-wynajac",
+    title: "Jak wypożyczyć",
+    path: "/#jak-wypozyczyc",
     button: false,
   },
 
   {
     id: 4,
-    title: "Kontakt",
+    title: "Skontaktuj się",
     path: "/#kontakt",
     button: true,
   },

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Iframe from "react-iframe";
 import Logo from "../logo";
 import Link from "next/link";
+import footerData from "./footerData";
 
 export default function Footer() {
   return (
@@ -28,19 +29,12 @@ export default function Footer() {
           <h3 className="mb-2">Szybkie linki</h3>
           <img src="/footer-underline.svg" alt="underline" className="mb-6" />
           <ul className="list-none flex flex-col gap-2">
-            {[
-              "Sprzęt",
-              "Jak wynająć",
-              "Kontakt",
-              "Regulamin serwisu",
-              "Polityka prywatności",
-              "Obowiązek informacyjny RODO",
-            ].map((link, index) => (
+            {footerData.map(({ title, path }, index) => (
               <li key={index} className="flex items-center leading-relaxed">
                 <span className="pr-2">
                   <img src="/li-asset.svg" alt="li-asset" />
                 </span>
-                <Link href="">{link}</Link>
+                <Link href={`/${path}`}>{title}</Link>
               </li>
             ))}
           </ul>

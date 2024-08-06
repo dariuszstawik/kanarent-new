@@ -1,5 +1,4 @@
 import { Inter, Poppins, Lato } from "@next/font/google";
-
 import "./globals.css";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar-homepage";
@@ -15,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="pl">
       <body>
         <AppWrapper>{children}</AppWrapper>
+        <Footer />
       </body>
     </html>
   );

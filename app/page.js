@@ -7,6 +7,7 @@ import Review from "./components/review";
 import HeroSection from "./components/hero-section";
 import { client } from "@/lib/contentful/client";
 import NavbarHomepage from "./components/navbar-homepage";
+import Footer from "./components/footer";
 
 async function getContentfulContent() {
   const resCategories = await client.getEntries({
