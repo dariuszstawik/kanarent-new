@@ -105,7 +105,7 @@ export default function ContactSection() {
             >
               <label
                 htmlFor="usersName"
-                className="inline-block  mr-auto relative uppercase after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
+                className="inline-block  mr-auto relative after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
               >
                 Imię i nazwisko
               </label>
@@ -119,7 +119,7 @@ export default function ContactSection() {
 
               <label
                 htmlFor="email"
-                className="inline-block  mr-auto relative uppercase after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
+                className="inline-block  mr-auto relative after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
               >
                 email
               </label>
@@ -132,7 +132,7 @@ export default function ContactSection() {
                 className="border border-primaryGreen rounded-xl leading-8 px-4"
               ></input>
 
-              <label htmlFor="phone" className="uppercase">
+              <label htmlFor="phone" className="">
                 telefon
               </label>
               <input
@@ -144,7 +144,7 @@ export default function ContactSection() {
 
               <label
                 htmlFor="message"
-                className="inline-block  mr-auto relative uppercase after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
+                className="inline-block  mr-auto relative after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
               >
                 wiadomość
               </label>
