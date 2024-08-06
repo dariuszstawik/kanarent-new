@@ -3,7 +3,7 @@ import SectionTitle from "../section-title";
 
 export default function ProductTemplate({ title, body, img, price }) {
   return (
-    <div className="w-[80%] mx-auto grid grid-cols[1fr_3fr] gap-8">
+    <div className="w-[80%] mx-auto grid grid-cols[1fr_3fr] gap-8 mb-16">
       <div className="col-span-1">
         <Image
           src={img?.fields?.file?.url ? "https:" + img.fields.file.url : ""}

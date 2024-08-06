@@ -12,7 +12,7 @@ export default function ProductCard({ title, img, href }) {
         <Image
           className="w-contain object-contain h-[50%] rounded-t-lg border border-forestgreen-300"
           // src="/pila-tarczowa-makita.webp"
-          src={`https://${img.fields.file.url}`}
+          src={`https:${img.fields.file.url}`}
           // fill
           // sizes={384}
           width={384}

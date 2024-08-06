@@ -22,45 +22,48 @@ async function getContntfulContent(slug) {
   return res.items[0];
 }
 
-// async function getContentfulNewsPosts(locale) {
-//   const res = await client.getEntries({
-//     content_type: "news",
-//     locale: locale,
-//   });
-//   return res.items;
-// }
-
 async function getContentfulContent() {
-  // const resCategories = await client.getEntries({
-  //   content_type: "category",
-  // });
+  const resCategories = await client.getEntries({
+    content_type: "category",
+  });
 
   const resProducts = await client.getEntries({
     content_type: "product",
   });
-  return resProducts.items;
+  return { categories: resCategories.items, products: resProducts.items };
 }
+
+// async function getContentfulContent() {
+//   const resCategories = await client.getEntries({
+//     content_type: "category",
+//   });
+
+//   const resProducts = await client.getEntries({
+//     content_type: "product",
+//   });
+//   return resProducts.items;
+// }
 export default async function Maszyny({ params }) {
   const { slug } = params;
   const category = await getContntfulContent(slug);
-  const products = await getContentfulContent();
-  // const categories = (await getContentfulContent()).categories;
-  // const products = (await getContentfulContent()).products;
+  // const products = await getContentfulContent();
+  const categories = (await getContentfulContent()).categories;
+  const products = (await getContentfulContent()).products;
 
   return (
     <>
       <Navbar />
       <PageHeader title="Sprzęt do wypożyczenia" />
       <div className="w-[80%] mx-auto">
-        <div className="w-full flex justify-between mb-8">
+        <div className="w-full flex justify-between">
           <SectionTitle isAlignedLeft>
             {category.fields.categoryName}
           </SectionTitle>
           <Button className="mt-auto min-w-[250px]">
-            Zobacz wszystkie kategorie
+            Zobacz pozostałe kategorie
           </Button>
         </div>
-        <ul className="w-full grid grid-cols-1 lg:grid-cols:2 xl:grid-cols-3 gap-[40px] mx-auto">
+        <ul className="w-full grid grid-cols-1 lg:grid-cols:2 xl:grid-cols-3 gap-[40px] mx-auto my-16">
           {products.map(
             (product) =>
               product.fields.kategoria.fields.categoryName ===
@@ -91,6 +94,17 @@ export default async function Maszyny({ params }) {
         </ul>
         {/* <HowToRentSection /> */}
         {/* <CategorySection categories={categories} products={products} /> */}
+        {/* 
+        <div className="w-full flex justify-between">
+          <SectionTitle isAlignedLeft>
+            {category.fields.categoryName}
+          </SectionTitle>
+          <Button className="mt-auto min-w-[250px]">
+            Zobacz wszystkie kategorie
+          </Button>
+        </div>
+        <CategorySection categories={categories} />
+         */}
       </div>
     </>
   );
