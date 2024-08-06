@@ -25,7 +25,7 @@ export default function RecommendedProductsSection({ products }) {
     // >
 
     <section
-      className="relative w-screen px-32 py-16  text-white bg-forestgreen-300"
+      className="relative w-screen px-10 lg:px-32 py-16  text-white bg-forestgreen-300"
       style={{
         backgroundImage: 'url("/pattern10.svg")',
         backgroundPosition: "center",

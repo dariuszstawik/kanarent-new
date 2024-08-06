@@ -57,7 +57,7 @@ export default function Footer() {
           />
         </div>
       </div>
-      <div className="w-full h-20 flex justify-center items-center bg-forestgreen-300 text-white">
+      <div className="w-full px-10 h-20 flex justify-center items-center bg-forestgreen-300 text-white">
         © 2024 Kana Rent. All rights reserved. Created by{" "}
         <a
           href="https://stronyjaksiepatrzy.pl"

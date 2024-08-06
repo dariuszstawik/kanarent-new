@@ -3,7 +3,7 @@ import ProductTitle from "../product-title";
 
 export default function RecommendedProductCard({ title, img, href }) {
   return (
-    <div className="w-[400px]">
+    <div className="w-full md:w-[400px]">
       <div className="relative w-full h-[315px] border-l-8 border-l-white">
         <img
           src={`https://${img.fields.file.url}`}
