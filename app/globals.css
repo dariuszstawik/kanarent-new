@@ -37,6 +37,13 @@ box-sizing: border-box;
     @apply mb-2;
   }
 
+  article ul {
+    @apply list-disc;
+  }
+  article ul li {
+    @apply ml-4;
+  }
+
   table, th, td {
     border: 1px solid;
     padding-top: 4px;
