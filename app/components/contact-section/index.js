@@ -1,11 +1,13 @@
+import Link from "next/link";
 import SectionTitle from "../section-title";
+import Button from "../button";
 
 export default function ContactSection() {
   return (
     <>
       <div className="w-full bg-whitesmoke-100" id="kontakt">
         <section
-          className={`mx-auto py-28 w-[90%] bg-whitesmoke-100 flex flex-col items-center xl:flex-row justify-center xl:items-start box-border gap-[26.5px] text-lg text-white font-poppins mq850:pl-[34px] mq850:pr-[34px] mq850:box-border mq1225:pl-[68px] mq1225:pr-[68px] mq1225:box-border mq1525:flex-wrap`}
+          className={`mx-auto py-28 w-[85%] bg-whitesmoke-100 flex flex-col items-center xl:flex-row justify-between xl:items-start gap-10 box-border text-lg text-white font-poppins mq850:pl-[34px] mq850:pr-[34px] mq850:box-border mq1225:pl-[68px] mq1225:pr-[68px] mq1225:box-border mq1525:flex-wrap`}
         >
           {/* <div className="h-[1172px] w-[1600px] relative bg-whitesmoke-100 hidden max-w-full" /> */}
           <div className="contactForm__contactInformation w-[522px] flex flex-col items-start justify-start gap-[50px] max-w-full text-xl text-forestgreen-100 mq850:gap-[25px]">
@@ -89,7 +91,105 @@ export default function ContactSection() {
             src="/vector-6791.svg"
           />
         </div> */}
-          <div className="contactSection__contactForm max-w-[1326px] flex flex-col items-start justify-start min-h-[762px] shrink-0  p-8 mx-auto">
+
+          <div
+            className="w-full xl:w-1/2 pt-10 flex flex-col gap-10 relative bg-forestgreen-300"
+            id="contactSection"
+          >
+            {/* <SectionTitle>Wyślij wiadomość</SectionTitle> */}
+            <h2 className="w-3/4 mx-auto text-white">Wyślij wiadomość</h2>
+            <form
+              // ref={form}
+              // onSubmit={sendEmail}
+              className="relative w-3/4 mx-auto mt-2 flex flex-col gap-2"
+            >
+              <label
+                htmlFor="usersName"
+                className="inline-block  mr-auto relative uppercase after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
+              >
+                Imię i nazwisko
+              </label>
+              <input
+                id="userName"
+                name="userName"
+                type="text"
+                required
+                className="relative border border-primaryGreen rounded-xl leading-8 px-4"
+              ></input>
+
+              <label
+                htmlFor="email"
+                className="inline-block  mr-auto relative uppercase after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
+              >
+                email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+"
+                className="border border-primaryGreen rounded-xl leading-8 px-4"
+              ></input>
+
+              <label htmlFor="phone" className="uppercase">
+                telefon
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                className="border border-primaryGreen rounded-xl leading-8 px-4"
+              ></input>
+
+              <label
+                htmlFor="message"
+                className="inline-block  mr-auto relative uppercase after:content-['*'] after:text-primaryGreen after:absolute after:-right-[10px] after:-top-[2px]"
+              >
+                wiadomość
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                required
+                className="border border-primaryGreen rounded-xl leading-8 px-4"
+              ></textarea>
+
+              <div className="flex justify-start items-start mt-6 mb-2">
+                <input
+                  type="checkbox"
+                  id="privacyTermsCheckbox"
+                  required
+                  className="mr-2"
+                />
+                <label
+                  htmlFor="privacyTermsCheckbox"
+                  className="-translate-y-2 relative before:content-['*'] before:text-smartOrange before:mr-2"
+                >
+                  Akceptuję{" "}
+                  <Link
+                    href="/polityka-prywatnosci"
+                    className="text-primaryGreen"
+                  >
+                    Politykę Prywatności
+                  </Link>
+                  .
+                </label>
+              </div>
+
+              <Button isWhite type="submit" className="ml-auto px-8 mt-4 mb-10">
+                Wyślij &gt;
+              </Button>
+              {/* {showNotification && (
+                <div className="text-primaryGreen text-2xl p-2 rounded absolute bottom-0 left-0">
+                  Wiadomość wysłana. Dziękujemy!
+                </div>
+              )} */}
+            </form>
+          </div>
+
+          {/* <div className="contactSection__contactForm max-w-[1326px] flex flex-col items-start justify-start min-h-[762px] shrink-0 ml-auto">
             <div className="self-stretch flex flex-row items-start justify-end max-w-full">
               <div className="xl:w-[621px] flex flex-col items-start justify-start py-[45px] px-[50px] box-border relative gap-[30px] max-w-full z-[1] mq850:gap-[15px] mq850:pl-[25px] mq850:pr-[25px] mq850:box-border">
                 <img
@@ -97,7 +197,7 @@ export default function ContactSection() {
                   alt=""
                   src="/group-28@2x.png"
                 />
-                <div className="flex flex-row items-start justify-start pt-0 px-0 pb-[5px] text-center text-11xl">
+                <div className="flex flex-row items-start justify-start pt-0 px-0 pb-[5px] text-center text-[30px]">
                   <h2 className="m-0 relative text-inherit capitalize font-bold font-inherit z-[1] mq450:text-lg mq850:text-5xl">
                     Wypełnij formularz
                   </h2>
@@ -181,12 +281,8 @@ export default function ContactSection() {
                 </button>
               </div>
             </div>
-            {/* <FrameComponent3
-          icon="/icon.svg"
-          locationIcon="/vector-11.svg"
-          mailIcon="/vector-12.svg"
-        /> */}
-          </div>
+
+          </div> */}
         </section>
       </div>
     </>

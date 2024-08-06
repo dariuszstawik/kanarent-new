@@ -7,8 +7,8 @@ export default function CategorySection({ categories, products }) {
       className="w-[90%] mx-auto pt-28 pb-32 text-5xl text-white font-poppins mq850:gap-[19px]"
       id="sprzet"
     >
-      <SectionTitle>Czego szukasz</SectionTitle>
-      <ul className="mt-16 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[47px_37.7px] justify-items-center ">
+      <SectionTitle>Sprzęt wg kategorii</SectionTitle>
+      <ul className="mt-16 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-[10px] gap-y-[60px] justify-items-center ">
         {categories.map((category) => (
           <CategoryCard
             key={category.sys.id}

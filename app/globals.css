@@ -23,11 +23,11 @@ box-sizing: border-box;
   }
 
   h1 {
-    @apply m-0 text-[54px] font-lato font-bold;
+    @apply m-0 text-[30px] md:text-[45px] xl:text-[50px] font-lato font-bold;
   }
 
   h2 {
-    @apply m-0 text-26xl font-semibold;
+    @apply m-0 text-[30px] md:text-[45px] font-semibold;
   }
 
   h3 {

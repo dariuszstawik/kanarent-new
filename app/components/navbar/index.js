@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="font-poppins bg-white border-b-2 border-b-forestgreen-300 text-xl antialiased fixed w-screen h-28 flex justify-between items-center px-10 lg:px-16 py-4 top-0 left-0 z-50">
+    <div className="font-poppins bg-white border-t-4 border-t-forestgreen-300 text-xl antialiased fixed w-screen h-28 flex justify-between items-center px-10 lg:px-16 py-4 top-0 left-0 z-50">
       <Logo closeMobileMenu={closeMobileMenu} />
       <div className="pl-16 w-full flex justify-end content-center items-center gap-6">
         <ul

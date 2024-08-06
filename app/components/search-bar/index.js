@@ -19,7 +19,7 @@ export default function SearchBar() {
 
   return (
     <form onSubmit={(e) => handleFormSubmit(e)}>
-      <div className="relative w-[460px] h-20 rounded-full mt-10">
+      <div className="relative w-full xl:w-3/5 h-20 rounded-full mt-10">
         <input
           id="q"
           name="q"

@@ -21,7 +21,7 @@ module.exports = {
         gray: {
           100: "#888",
           200: "#161616",
-          300: "#060606",
+          // 300: "#060606",
           400: "rgba(255, 255, 255, 0.5)",
         },
         whitesmoke: {
@@ -79,7 +79,7 @@ module.exports = {
       "46xl": "65px",
       "20xl": "39px",
       "33xl": "52px",
-      "3xl": "22px",
+      // "3xl": "22px",
       "10xl": "29px",
       "21xl": "40px",
       inherit: "inherit",

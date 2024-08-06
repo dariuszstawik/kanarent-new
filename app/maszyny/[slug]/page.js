@@ -56,12 +56,12 @@ export default async function Maszyny({ params }) {
       <Navbar />
       <PageHeader title="Sprzęt do wypożyczenia" />
       <div className="w-[80%] mx-auto">
-        <div className="w-full flex justify-between">
+        <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between">
           <SectionTitle isAlignedLeft>
             {category.fields.categoryName}
           </SectionTitle>
 
-          <Button className="mt-auto min-w-[250px]">
+          <Button className="mt-auto min-w-[250px] mr-auto">
             <Link href="/#sprzet">Zobacz pozostałe kategorie</Link>
           </Button>
         </div>
