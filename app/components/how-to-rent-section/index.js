@@ -1,7 +1,18 @@
+"use client";
+import Link from "next/link";
 import HowToRentStep from "../how-to-rent-step";
 import SectionTitle from "../section-title";
 
 export default function HowToRentSection() {
+  const handleScroll = (e) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <div
       className={`self-stretch bg-whitesmoke-100 flex flex-col items-center justify-start pt-[100px] pb-28 pr-[21px] pl-5 box-border relative gap-[60px] max-w-full mq450:pt-[42px] mq450:pb-[42px] mq450:box-border mq850:gap-[30px] mq850:pt-[65px] mq850:pb-[65px] mq850:box-border`}
@@ -34,9 +45,15 @@ export default function HowToRentSection() {
       </div>
       <div className="w-[1325px] flex flex-row items-start justify-center py-0 pr-0 pl-0.5 box-border max-w-full">
         <button className="cursor-pointer [border:none] py-4 px-[37px] bg-forestgreen-300 rounded-11xl flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-mediumseagreen-200">
-          <div className="relative text-lg font-semibold font-poppins text-white text-left">
-            Regulamin serwisu
-          </div>
+          <Link
+            href="/#kontakt"
+            onClick={(e) => {
+              handleScroll(e);
+            }}
+            className="relative text-lg font-semibold font-poppins text-white text-left"
+          >
+            Skontaktuj się
+          </Link>
         </button>
       </div>
       {/* <img

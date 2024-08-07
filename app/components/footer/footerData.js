@@ -26,19 +26,19 @@ const footerData = [
   {
     id: 5,
     title: "Regulamin serwisu",
-    path: "/#regulamin",
+    path: "regulamin-serwisu",
   },
 
   {
     id: 6,
     title: "Polityka prywatności",
-    path: "/#polityka-prywatnosci",
+    path: "polityka-prywatnosci",
   },
 
   {
     id: 7,
     title: "Obowiązek informacyjny RODO",
-    path: "/#obowiazek-informacyjny-rodo",
+    path: "obowiazek-informacyjny-rodo",
   },
 ];
 
