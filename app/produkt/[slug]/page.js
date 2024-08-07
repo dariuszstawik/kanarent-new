@@ -8,6 +8,8 @@ import ContactSection from "@/app/components/contact-section";
 
 export const runtime = "edge";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const res = await client.getEntries({
     content_type: "product",

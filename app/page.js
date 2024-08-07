@@ -11,6 +11,8 @@ import Footer from "./components/footer";
 
 export const runtime = "edge";
 
+export const dynamicParams = false;
+
 async function getContentfulContent() {
   const resCategories = await client.getEntries({
     content_type: "category",

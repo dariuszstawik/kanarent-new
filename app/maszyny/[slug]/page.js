@@ -10,6 +10,8 @@ import Link from "next/link";
 
 export const runtime = "edge";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const res = await client.getEntries({ content_type: "category" });
 
