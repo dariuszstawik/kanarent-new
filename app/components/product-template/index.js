@@ -35,7 +35,7 @@ export default function ProductTemplate({ title, body, img, price }) {
       </div>
       <div className="w-full flex flex-col md:flex-row gap-4 items-center mt-10 lg:hidden">
         {price && (
-          <div className="relative w-1/3 h-[72px] flex justify-center items-center bg-transparent border-[2px] border-forestgreen-300 text-forestgreen-300 ml-[10px]">
+          <div className="relative w-1/2 md:w-1/3 h-[72px] flex justify-center items-center bg-transparent border-[2px] border-forestgreen-300 text-forestgreen-300 ml-[10px]">
             <span className="text-[16px] font-semibold">{price}</span>
             <div className="h-[95px] w-[95px] absolute !m-[0] top-[-9px] left-[-9px] z-[1]">
               <div className="absolute -top-[2px] left-[0px] bg-forestgreen-300 w-[50px] h-[2px]" />
