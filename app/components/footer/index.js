@@ -22,7 +22,9 @@ export default function Footer() {
             akumulatorowych.
           </div>
           <div className="mt-6 flex justify-center items-center h-[37px] w-[37px] rounded-3xs box-border border-[1px] border-solid border-forestgreen-300 z-20">
-            <img className="w-[19px] h-[19px]" alt="" src="/vector-13.svg" />
+            <a href="https://www.facebook.com/kana.rent" target="_blank">
+              <img className="w-[19px] h-[19px]" alt="" src="/vector-13.svg" />{" "}
+            </a>
           </div>
         </div>
         <div className="w-full lg:w-[360px] z-20">
