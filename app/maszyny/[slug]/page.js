@@ -8,6 +8,8 @@ import SectionTitle from "../../components/section-title";
 import Navbar from "@/app/components/navbar";
 import Link from "next/link";
 
+export const runtime = "edge";
+
 export async function generateStaticParams() {
   const res = await client.getEntries({ content_type: "category" });
 

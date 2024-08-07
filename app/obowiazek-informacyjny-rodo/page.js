@@ -3,6 +3,8 @@ import PageHeader from "../components/page-header";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Navbar from "../components/navbar";
 
+export const runtime = "edge";
+
 async function getContentfulContent() {
   const resRodo = await client.getEntries({
     content_type: "rodo",

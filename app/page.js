@@ -9,6 +9,8 @@ import { client } from "@/lib/contentful/client";
 import NavbarHomepage from "./components/navbar-homepage";
 import Footer from "./components/footer";
 
+export const runtime = "edge";
+
 async function getContentfulContent() {
   const resCategories = await client.getEntries({
     content_type: "category",
