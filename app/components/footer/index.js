@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <section>
       <div
-        className="relative w-full px-4 py-8 sm:px-8 md:px-16 lg:px-32 lg:py-16 flex flex-col lg:flex-row flex-wrap gap-8 lg:gap-[50px] text-whitesmoke-100 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gray-800 after:opacity-95"
+        className="relative w-full px-10 py-8 sm:px-8 md:px-16 lg:px-32 lg:py-16 flex flex-col lg:flex-row flex-wrap gap-8 lg:gap-[50px] text-whitesmoke-100 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gray-800 after:opacity-95"
         style={{
           backgroundImage: 'url("/footer-back.jpg")',
           backgroundPosition: "right bottom",

@@ -23,7 +23,7 @@ export default function HeroSection() {
           <SearchBar></SearchBar>
         </div>
       </div>
-      <div className="darkOverlay relative z-30 w-[100%] h-full bg-gray-700 opacity-90 xl:hidden">
+      <div className="darkOverlay relative z-30 w-[100%] h-full px-10 bg-gray-700 opacity-90 xl:hidden">
         <div className="w-full h-full flex flex-col items-center justify-center z-40">
           <h1 className="text-3xl text-white text-center">
             Wypożyczalnia sprzętu

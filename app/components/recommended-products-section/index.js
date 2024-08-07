@@ -31,7 +31,7 @@ export default function RecommendedProductsSection({ products }) {
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full flex flex-col lg:flex-row justify-between mb-16 ">
+      <div className="w-full flex flex-col lg:flex-row lg:justify-between mb-16 ">
         <SectionTitle isAlignedLeft isWhite>
           Polecamy
         </SectionTitle>
@@ -41,7 +41,7 @@ export default function RecommendedProductsSection({ products }) {
           </Button>
         </Link>
       </div>
-      <ul className="flex flex-row flex-wrap gap-[40px]">
+      <ul className="flex flex-col lg:flex-row lg:flex-wrap gap-[40px]">
         {products.map(
           (product) =>
             product.fields.isHighlighted && (
