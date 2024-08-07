@@ -7,7 +7,7 @@ export default function PageHeader({ title }) {
         backgroundPosition: "center",
       }}
     >
-      <h1 className="my-auto font-lato text-white"> {title} </h1>
+      <h1 className="my-auto text-center font-lato text-white"> {title} </h1>
     </div>
   );
 }
