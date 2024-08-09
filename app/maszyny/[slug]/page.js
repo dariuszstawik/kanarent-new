@@ -12,13 +12,22 @@ export const runtime = "edge";
 
 export const dynamicParams = false;
 
+// export async function generateStaticParams() {
+//   const res = await client.getEntries({ content_type: "category" });
+
+//   return res.items.map((post) => ({
+//     slug: post.slug,
+//   }));
+// }
+
 export async function generateStaticParams() {
   const res = await client.getEntries({ content_type: "category" });
 
   return res.items.map((post) => ({
-    slug: post.slug,
+    slug: post.fields.slug, // upewnij się, że zwracasz właściwe pole
   }));
 }
+
 async function getContntfulContent(slug) {
   const res = await client.getEntries({
     content_type: "category",
