@@ -65,6 +65,7 @@ export default async function Home() {
     <>
       <NavbarHomepage />
       <HeroSection />
+      <div>{categories[0].fields.title}</div>
       {/* <CategorySection categories={categories} products={products} /> */}
       <HowToRentSection />
       {/* <RecommendedProductsSection products={products} /> */}
