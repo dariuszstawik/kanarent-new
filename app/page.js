@@ -17,7 +17,7 @@ async function getContentfulContent() {
     const accessToken = process.env.CONTENTFUL_ACCESS_KEY;
 
     const resCategories = await fetch(
-      `https://cdn.contentful.com/spaces/${spaceId}/environments/master/assets?`,
+      `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?content_type=category`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -26,6 +26,15 @@ async function getContentfulContent() {
     );
 
     const resProducts = await fetch(
+      `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?content_type=product`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+
+    const resAssets = await fetch(
       `https://cdn.contentful.com/spaces/${spaceId}/environments/master/assets?`,
       {
         headers: {
@@ -34,28 +43,33 @@ async function getContentfulContent() {
       }
     );
 
-    if (!resCategories.ok || !resProducts.ok) {
+    if (!resCategories.ok || !resProducts.ok || !resAssets.ok) {
       throw new Error("Failed to fetch data from Contentful");
     }
 
     const categoriesData = await resCategories.json();
     const productsData = await resProducts.json();
+    const assetsData = await resAssets.json();
 
     return {
       categories: categoriesData.items,
       products: productsData.items,
+      assets: assetsData.items,
     };
   } catch (error) {
     console.error("Error fetching data from Contentful:", error);
     return {
       categories: [],
       products: [],
+      assets: [],
     };
   }
 }
 
 export default async function Home() {
-  const { categories, products } = await getContentfulContent();
+  const { categories, products, assets } = await getContentfulContent();
+
+  const images = assets.filter((asset) => asset.fields.file.url);
 
   console.log("--------");
   console.log(categories[0]);
@@ -65,10 +79,13 @@ export default async function Home() {
     <>
       <NavbarHomepage />
       <HeroSection />
-      <div>{categories[0].fields.title}</div>
-      {/* <CategorySection categories={categories} products={products} /> */}
+      <CategorySection
+        categories={categories}
+        products={products}
+        images={images}
+      />
       <HowToRentSection />
-      {/* <RecommendedProductsSection products={products} /> */}
+      <RecommendedProductsSection products={products} images={images} />
       <ContactSection />
     </>
   );

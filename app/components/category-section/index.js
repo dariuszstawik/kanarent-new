@@ -1,7 +1,7 @@
 import CategoryCard from "../category-card";
 import SectionTitle from "../section-title";
 
-export default function CategorySection({ categories, products }) {
+export default function CategorySection({ categories, products, images }) {
   return (
     <section
       className="w-[90%] mx-auto pt-28 pb-32 text-5xl text-white font-poppins mq850:gap-[19px]"
@@ -13,7 +13,9 @@ export default function CategorySection({ categories, products }) {
           <CategoryCard
             key={category.sys.id}
             title={category.fields.categoryName}
-            img={category.fields.image || ""}
+            img={images.find(
+              (image) => image.sys.id === category.fields.image.sys.id
+            )}
             href={`/maszyny/${category.fields.slug}`}
           />
         ))}

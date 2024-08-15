@@ -4,7 +4,7 @@ import Button from "../button";
 import RecommendedProductCard from "../recommended-product-card";
 import SectionTitle from "../section-title";
 
-export default function RecommendedProductsSection({ products }) {
+export default function RecommendedProductsSection({ products, images }) {
   const handleScroll = (e) => {
     e.preventDefault();
     const href = e.currentTarget.href;
@@ -48,7 +48,9 @@ export default function RecommendedProductsSection({ products }) {
               <RecommendedProductCard
                 key={product.sys.id}
                 title={product.fields.title}
-                img={product.fields.image || ""}
+                img={images.find(
+                  (image) => image.sys.id === product.fields.image.sys.id
+                )}
                 href={`/produkt/${product.fields.slug}`}
               />
             )
