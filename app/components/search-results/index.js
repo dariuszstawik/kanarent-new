@@ -46,7 +46,7 @@ export default function SearchResults({ products, images }) {
                   img={images.find(
                     (image) => image.sys.id === product.fields.image.sys.id
                   )}
-                  href={`/produkt/${product.fields.slug}`}
+                  href={`produkt/${product.fields.slug}`}
                 />
               ))}
         </ul>
