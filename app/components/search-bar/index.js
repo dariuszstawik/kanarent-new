@@ -12,10 +12,7 @@ export default function SearchBar() {
     e.preventDefault();
     setSearchResults(e.target.q.value);
     router.push(`/wyniki-wyszukiwania`);
-    console.log(e.target.q.value);
   };
-
-  console.log(searchResults);
 
   return (
     <form onSubmit={(e) => handleFormSubmit(e)}>

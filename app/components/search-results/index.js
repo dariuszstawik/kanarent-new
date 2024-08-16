@@ -7,7 +7,7 @@ import Navbar from "../navbar";
 import Link from "next/link";
 import Button from "../button";
 
-export default function SearchResults({ products, categories }) {
+export default function SearchResults({ products, images }) {
   const [searchResults, setSearchResults] = useAppContext();
 
   return (
@@ -43,7 +43,9 @@ export default function SearchResults({ products, categories }) {
                 <ProductCard
                   key={product.sys.id}
                   title={product.fields.title}
-                  img={product.fields.image || ""}
+                  img={images.find(
+                    (image) => image.sys.id === product.fields.image.sys.id
+                  )}
                   href={`/produkt/${product.fields.slug}`}
                 />
               ))}

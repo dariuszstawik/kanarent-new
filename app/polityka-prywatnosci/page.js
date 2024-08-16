@@ -1,4 +1,3 @@
-import { client } from "@/lib/contentful/client";
 import PageHeader from "../components/page-header";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Navbar from "../components/navbar";
@@ -6,13 +5,30 @@ import Navbar from "../components/navbar";
 export const runtime = "edge";
 
 async function getContentfulContent() {
-  const resPrivacyPolicy = await client.getEntries({
-    content_type: "privacyPolicy",
-  });
+  try {
+    const spaceId = process.env.CONTENTFUL_SPACE_ID;
+    const accessToken = process.env.CONTENTFUL_ACCESS_KEY;
 
-  const privacyPolicy = resPrivacyPolicy.items;
+    const res = await fetch(
+      `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?content_type=privacyPolicy`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
 
-  return privacyPolicy[0];
+    if (!res.ok) {
+      throw new Error("Failed to fetch data from Contentful");
+    }
+
+    const data = await res.json();
+
+    return data.items[0];
+  } catch (error) {
+    console.error("Error fetching data from Contentful:", error);
+    return null;
+  }
 }
 
 export default async function PolitykaPrywatnosci() {
