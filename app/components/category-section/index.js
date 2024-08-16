@@ -16,7 +16,7 @@ export default function CategorySection({ categories, products, images }) {
             img={images.find(
               (image) => image.sys.id === category.fields.image.sys.id
             )}
-            href={`/maszyny/${category.fields.slug}`}
+            href={`maszyny/${category.fields.slug}`}
           />
         ))}
       </ul>

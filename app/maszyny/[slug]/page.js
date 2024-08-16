@@ -146,7 +146,7 @@ export default async function Maszyny({ params }) {
                   (image) => image.sys.id === product.fields.image.sys.id
                 )}
                 price={product.fields.price || ""}
-                href={`/produkt/${product.fields.slug}`}
+                href={`produkt/${product.fields.slug}`}
               />
             ))}
         </ul>
