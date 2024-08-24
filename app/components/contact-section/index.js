@@ -1,8 +1,48 @@
+"use client";
 import Link from "next/link";
 import SectionTitle from "../section-title";
 import Button from "../button";
+import { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
+  const form = useRef(null);
+  const [showNotification, setShowNotification] = useState(false);
+
+  useEffect(() => {
+    if (showNotification) {
+      const timer = setTimeout(() => {
+        setShowNotification(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showNotification]);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log("Email sent!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+    setShowNotification(true);
+
+    e.target && e.target.reset();
+  };
+
   return (
     <>
       <div className="w-full bg-whitesmoke-100" id="kontakt">
@@ -101,8 +141,8 @@ export default function ContactSection() {
               Wyślij wiadomość
             </h2>
             <form
-              // ref={form}
-              // onSubmit={sendEmail}
+              ref={form}
+              onSubmit={sendEmail}
               className="relative w-3/4 mx-auto mt-2 flex flex-col gap-2"
             >
               <label
@@ -112,11 +152,11 @@ export default function ContactSection() {
                 Imię i nazwisko
               </label>
               <input
-                id="userName"
-                name="userName"
+                id="user_name"
+                name="user_name"
                 type="text"
                 required
-                className="relative border border-primaryGreen rounded-xl leading-8 px-4"
+                className="text-black relative border border-primaryGreen rounded-xl leading-8 px-4"
               ></input>
 
               <label
@@ -126,22 +166,22 @@ export default function ContactSection() {
                 email
               </label>
               <input
-                id="email"
-                name="email"
+                id="user_email"
+                name="user_email"
                 type="email"
                 required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+"
-                className="border border-primaryGreen rounded-xl leading-8 px-4"
+                className="text-black border border-primaryGreen rounded-xl leading-8 px-4"
               ></input>
 
               <label htmlFor="phone" className="">
                 telefon
               </label>
               <input
-                id="phone"
-                name="phone"
-                type="tel"
-                className="border border-primaryGreen rounded-xl leading-8 px-4"
+                id="user_phone"
+                name="user_phone"
+                type="text"
+                className="text-black border border-primaryGreen rounded-xl leading-8 px-4"
               ></input>
 
               <label
@@ -155,7 +195,7 @@ export default function ContactSection() {
                 name="message"
                 rows={5}
                 required
-                className="border border-primaryGreen rounded-xl leading-8 px-4"
+                className="text-black border border-primaryGreen rounded-xl leading-8 px-4"
               ></textarea>
 
               <div className="flex justify-start items-start mt-6 mb-2">
@@ -163,7 +203,7 @@ export default function ContactSection() {
                   type="checkbox"
                   id="privacyTermsCheckbox"
                   required
-                  className="mr-2"
+                  className="text-black mr-2"
                 />
                 <label
                   htmlFor="privacyTermsCheckbox"
@@ -189,6 +229,11 @@ export default function ContactSection() {
                 </div>
               )} */}
             </form>
+            {showNotification && (
+              <div className="text-white py-2 px-4 mt-2 mr-2 rounded">
+                Wiadomość wysłana. Dziękujemy!
+              </div>
+            )}
           </div>
 
           {/* <div className="contactSection__contactForm max-w-[1326px] flex flex-col items-start justify-start min-h-[762px] shrink-0 ml-auto">
