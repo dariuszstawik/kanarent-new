@@ -3,10 +3,8 @@ import CategorySection from "./components/category-section";
 import HowToRentSection from "./components/how-to-rent-section";
 import RecommendedProductsSection from "./components/recommended-products-section";
 import ContactSection from "./components/contact-section";
-import Review from "./components/review";
 import HeroSection from "./components/hero-section";
 import NavbarHomepage from "./components/navbar-homepage";
-import Footer from "./components/footer";
 
 export const runtime = "edge";
 export const dynamicParams = false;
@@ -70,10 +68,6 @@ export default async function Home() {
   const { categories, products, assets } = await getContentfulContent();
 
   const images = assets.filter((asset) => asset.fields.file.url);
-
-  // console.log("--------");
-  // console.log(categories[0]);
-  // console.log(products[1].fields);
 
   return (
     <>

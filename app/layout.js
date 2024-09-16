@@ -17,6 +17,11 @@ export default function RootLayout({ children }) {
         <AppWrapper>{children}</AppWrapper>
         <Footer />
       </body>
+      <script
+        id="cookieyes"
+        type="text/javascript"
+        src="https://cdn-cookieyes.com/client_data/4eb158332f26f5f9eb4cc8a5/script.js"
+      ></script>
     </html>
   );
 }
