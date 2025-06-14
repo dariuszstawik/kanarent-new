@@ -8,6 +8,9 @@ export const metadata = {
   title: "Kana Rent",
   description:
     "Wypożyczalnia sprzętu budowlanego i ogrodnicznego Będzin i okolice",
+  verification: {
+    google: "amGYlWO0MZ23Z9oCToqabwm2xarfMoKI2NqcwM4CojQ",
+  },
 };
 
 export default function RootLayout({ children }) {
